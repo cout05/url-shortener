@@ -1,0 +1,37 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap");
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  background-color: hsl(0, 0%, 75%);
+}
+
+.first-section {
+  background-color: white;
+  height: 100vh;
+}
+
+.second-section {
+  height: 100vh;
+}
+
+.sign-up {
+  display: block;
+  border-radius: 30px;
+  padding: 8px 15px;
+  background-color: hsl(180, 66%, 49%);
+  margin: 0 10px;
+}
+
+.sign-up:hover {
+  opacity: 0.5;
+}
+
+.sign-up a {
+  color: white;
+}
+
+.sign-up a:hover {
+  color: white;
+}

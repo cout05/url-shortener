@@ -1,0 +1,93 @@
+.boost-link {
+  padding: 50px 0;
+  text-align: center;
+  color: white;
+  background-color: hsl(255, 11%, 22%);
+}
+
+.boost-link h2 {
+  font-size: 2.2rem;
+}
+
+.boost-link button {
+  color: white;
+  font-size: 1rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 100px;
+  padding: 15px 20px;
+  background-color: hsl(180, 66%, 49%);
+  margin: 0 10px;
+  cursor: pointer;
+}
+
+.boost-link button:hover {
+  background-color: hsla(180, 100%, 75%, 0.945);
+}
+
+footer {
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  padding: 50px 100px 100px 100px;
+  background-color: hsl(260, 8%, 14%);
+}
+
+.logo-con h2 {
+  font-size: 2.2rem;
+}
+
+.footer-links {
+  display: flex;
+  gap: 5rem;
+}
+
+.footer-links div {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.footer-links a {
+  text-decoration: none;
+  color: hsl(257, 7%, 63%);
+}
+
+.footer-links a:hover {
+  color: hsl(180, 66%, 49%);
+}
+
+.right {
+  display: flex;
+  gap: 2rem;
+}
+
+.icons-con {
+  display: flex;
+  justify-content: baseline;
+  align-items: baseline;
+  gap: 1rem;
+  padding-top: 20px;
+}
+
+.icons-con img:hover {
+  fill: aqua;
+  cursor: pointer;
+}
+
+@media (max-width: 600px) {
+  footer {
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .footer-links {
+    text-align: center;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .right {
+    flex-direction: column;
+  }
+}

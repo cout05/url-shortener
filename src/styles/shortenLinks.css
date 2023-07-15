@@ -1,0 +1,159 @@
+.inputs {
+  background-color: hsl(260, 8%, 14%);
+  padding: 40px;
+  border-radius: 10px;
+  margin: 0 100px 20px 100px;
+}
+
+.outputs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 5px 120px;
+}
+
+.outputs p {
+  color: black;
+  margin: 0;
+}
+
+.outputs a {
+  color: hsl(180, 66%, 49%);
+  text-decoration: none;
+}
+
+.outputs div {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.link-con {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  background-color: white;
+  padding: 10px 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+form div {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  border: 1px solid black;
+}
+
+.inputs input {
+  font-size: 1.2rem;
+  width: 85%;
+  padding: 10px;
+  margin-right: 20px;
+  border: none;
+  border-radius: 5px;
+}
+
+.inputs button {
+  padding: 15px 20px;
+  font-size: 1rem;
+  font-weight: 700;
+  border: none;
+  background-color: hsl(180, 66%, 49%);
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.inputs button:hover {
+  background-color: hsla(180, 100%, 75%, 0.945);
+}
+
+.outputs button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: 700;
+  border: none;
+  background-color: hsl(180, 66%, 49%);
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.outputs button:hover {
+  background-color: hsla(180, 100%, 75%, 0.945);
+}
+
+.outputs button.clicked {
+  background-color: hsl(257, 27%, 26%);
+}
+
+input:focus {
+  outline: 2px solid hsl(0, 87%, 67%);
+}
+
+.error-text {
+  font-size: 0.8rem;
+  font-style: italic;
+  margin-bottom: 0;
+  padding: 0;
+  color: hsl(0, 87%, 67%);
+}
+
+@media (max-width: 600px) {
+  .inputs {
+    margin: 10px;
+    padding: 20px;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  form div {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .inputs input {
+    margin-right: 0;
+    margin-bottom: 20px;
+    width: 95%;
+  }
+
+  .inputs button {
+    display: block;
+    padding: 10px;
+    width: 100%;
+  }
+
+  .link-con {
+    flex-direction: column;
+  }
+
+  .line {
+    opacity: 0.5;
+    border-bottom: 1px solid hsl(0, 0%, 75%);
+    width: 100%;
+  }
+
+  .outputs {
+    padding: 10px 30px;
+  }
+
+  .outputs div {
+    flex-direction: column;
+  }
+
+  .outputs button {
+    width: 100%;
+  }
+}
