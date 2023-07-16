@@ -15,7 +15,7 @@ const Header = () => {
       <header>
         <div className="links-container">
           <img src={logo} alt="logo" />
-          <div className="links">
+          <ul className="links">
             <li>
               <a href="#">Features</a>
             </li>
@@ -25,7 +25,7 @@ const Header = () => {
             <li>
               <a href="#">Resources</a>
             </li>
-          </div>
+          </ul>
         </div>
         <div>
           <AiOutlineMenu className="menu" onClick={handleClick} />

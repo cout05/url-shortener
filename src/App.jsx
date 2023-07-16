@@ -8,16 +8,14 @@ function App() {
   return (
     <>
       <div>
-        <section className="first-section">
+        <main className="first-section">
           <Header />
           <Hero />
-        </section>
 
-        <section className="second-section">
           <ShortenLinks />
           <Features />
           <Footer />
-        </section>
+        </main>
       </div>
     </>
   );

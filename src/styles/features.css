@@ -1,5 +1,5 @@
 .features-con {
-  padding: 20px 100px;
+  padding: 20px 100px 50px 100px;
   text-align: center;
 }
 
@@ -45,7 +45,7 @@ h3 {
 
 @media (max-width: 600px) {
   .features-con {
-    padding: 10px;
+    padding: 10px 10px 30px 10px;
   }
   .columns {
     flex-direction: column;

@@ -2,25 +2,35 @@ import "../styles/shortenLinks.css";
 import { useRef, useState, useEffect } from "react";
 
 const ShortenLinks = () => {
-  const inputRef = useRef();
   const [originalLink, setOriginalLink] = useState("");
   const [linksArray, setLinksArray] = useState([]);
   const [error, setError] = useState("");
+  const [isClick, setIsClick] = useState(false);
+  const [isButtonClick, setIsButtonClick] = useState(false);
 
   const handleChange = (event) => {
     setOriginalLink(event.target.value);
   };
 
+  const handleClick = () => {
+    setIsClick(true);
+  };
+
   const handleSubmit = async (event) => {
     event.preventDefault();
 
+    if (originalLink === "") {
+      setIsClick(true);
+    }
+
     const response = await fetch(
-      "https://api.shrtco.de/v2/shorten?url=example.org/very/long/link.html",
+      `https://api.shrtco.de/v2/shorten?url=${originalLink}`,
       {
         method: "POST",
         headers: {
           "Content-Type": "application/x-www-form-urlencoded",
         },
+        body: JSON.stringify({ originalLink }),
       }
     );
 
@@ -33,19 +43,21 @@ const ShortenLinks = () => {
   };
 
   const handleCopy = (link) => {
+    setIsButtonClick(true);
     navigator.clipboard.writeText(link).then(() => {
       console.log("Link copied to clipboard!");
     });
   };
 
   useEffect(() => {
-    if (originalLink !== "") {
-      setError("");
-    } else {
-      setError("Please Add a link");
-      inputRef.current.focus();
+    if (isClick) {
+      if (originalLink === "") {
+        setError("Please add a link");
+      } else {
+        setError("");
+      }
     }
-  }, [originalLink]);
+  }, [originalLink, isClick]);
 
   return (
     <div>
@@ -55,13 +67,14 @@ const ShortenLinks = () => {
             <div>
               {" "}
               <input
-                ref={inputRef}
                 type="text"
                 required
                 placeholder="Shorten link here..."
                 value={originalLink}
                 onChange={handleChange}
+                onClick={handleClick}
                 name="input"
+                className={error ? "empty" : null}
               />
               <button type="submit">Shorten It!</button>
             </div>
@@ -79,7 +92,11 @@ const ShortenLinks = () => {
                 <div className="line"></div>
                 <div>
                   <a href={link}>{link}</a>
-                  <button onClick={() => handleCopy(link)}>Copy</button>
+                  <button
+                    className={isButtonClick ? "clicked" : null}
+                    onClick={() => handleCopy(link)}>
+                    {isButtonClick ? "Copied!" : "Copy"}
+                  </button>
                 </div>
               </div>
             );

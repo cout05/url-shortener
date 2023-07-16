@@ -1,8 +1,8 @@
 .inputs {
   background-color: hsl(260, 8%, 14%);
-  padding: 40px;
+  padding: 50px 40px;
   border-radius: 10px;
-  margin: 0 100px 20px 100px;
+  margin: 0px 100px 20px 100px;
 }
 
 .outputs {
@@ -47,7 +47,6 @@ form div {
   width: 100%;
   padding: 0;
   margin: 0;
-  border: 1px solid black;
 }
 
 .inputs input {
@@ -57,10 +56,11 @@ form div {
   margin-right: 20px;
   border: none;
   border-radius: 5px;
+  padding: 15px 10px;
 }
 
 .inputs button {
-  padding: 15px 20px;
+  padding: 20px;
   font-size: 1rem;
   font-weight: 700;
   border: none;
@@ -89,12 +89,16 @@ form div {
   background-color: hsla(180, 100%, 75%, 0.945);
 }
 
-.outputs button.clicked {
+.empty {
+  outline: 2px solid hsl(0, 87%, 67%);
+}
+
+.outputs .clicked {
   background-color: hsl(257, 27%, 26%);
 }
 
-input:focus {
-  outline: 2px solid hsl(0, 87%, 67%);
+.outputs .clicked:hover {
+  background-color: hsla(259, 27%, 21%, 0.993);
 }
 
 .error-text {
@@ -124,6 +128,7 @@ input:focus {
   }
 
   .inputs input {
+    padding: 12px;
     margin-right: 0;
     margin-bottom: 20px;
     width: 95%;
@@ -131,7 +136,7 @@ input:focus {
 
   .inputs button {
     display: block;
-    padding: 10px;
+    padding: 15px 10px;
     width: 100%;
   }
 
@@ -143,6 +148,8 @@ input:focus {
     opacity: 0.5;
     border-bottom: 1px solid hsl(0, 0%, 75%);
     width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
   }
 
   .outputs {
@@ -150,10 +157,12 @@ input:focus {
   }
 
   .outputs div {
-    flex-direction: column;
+    text-align: center;
+    display: block;
   }
 
   .outputs button {
+    margin-top: 10px;
     width: 100%;
   }
 }
